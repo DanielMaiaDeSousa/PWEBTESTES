@@ -111,16 +111,6 @@ body {
     margin-bottom: 40px;
 }
 
-.titulo-secao {
-    color: var(--cor-principal);
-    font-size: 22px;
-    border-bottom: 3px solid var(--cor-principal);
-    padding-bottom: 5px;
-    margin-top: 40px;
-    margin-bottom: 20px;
-    font-weight: 600;
-}
-
 .info-geral {
     border-bottom: 1px solid var(--cor-borda);
     padding-bottom: 15px;
@@ -131,6 +121,16 @@ body {
     text-align: right;
     font-style: italic;
     font-size: 14px;
+}
+
+.titulo-secao {
+    color: var(--cor-principal);
+    font-size: 22px;
+    border-bottom: 3px solid var(--cor-principal);
+    padding-bottom: 5px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-weight: 600;
 }
 
 .destaque-migracao {
