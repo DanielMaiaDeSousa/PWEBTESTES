@@ -1,0 +1,168 @@
+/* Estilos Gerais */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.proposta-container {
+    max-width: 900px;
+    margin: 20px auto;
+    background: #fff;
+    padding: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos do Formulário de Edição */
+#form-edicao {
+    background: #e9e9e9;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 30px;
+}
+
+#form-edicao label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+#form-edicao input[type="text"], 
+#form-edicao input[type="number"], 
+#form-edicao input[type="date"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#form-edicao button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#form-edicao button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos de Estrutura da Proposta */
+h1 {
+    color: #005f99; /* Azul escuro da ReadyTI */
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #005f99;
+    border-bottom: 2px solid #005f99;
+    padding-bottom: 5px;
+    margin-top: 30px;
+}
+
+h3 {
+    color: #555;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+.secao {
+    margin-bottom: 30px;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #ccc;
+    margin: 40px 0;
+}
+
+/* Capa */
+.capa {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.capa img {
+    max-width: 250px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.data-local {
+    text-align: right;
+    font-style: italic;
+    margin-top: 30px;
+}
+
+/* Listas */
+ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    padding-left: 0;
+}
+
+/* Financeiro */
+.bloco-financeiro {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #eee;
+    border-left: 5px solid #005f99;
+}
+
+.valor {
+    font-size: 24px;
+    font-weight: bold;
+    color: #005f99;
+}
+
+/* Assinaturas */
+.assinaturas {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+.assinatura-lado {
+    width: 45%;
+    text-align: center;
+}
+
+.linha-assinatura {
+    margin-top: 50px;
+    margin-bottom: 5px;
+    border-top: 1px solid #333;
+    height: 1px;
+    width: 100%;
+}
+
+.nome-assinatura, .cargo-assinatura, .data-aceite {
+    margin: 5px 0;
+    font-weight: bold;
+}
+
+/* Estilos de Impressão para ocultar o formulário ao imprimir */
+@media print {
+    #form-edicao {
+        display: none;
+    }
+    body {
+        background-color: #fff;
+        padding: 0;
+    }
+    .proposta-container {
+        box-shadow: none;
+        margin: 0;
+        padding: 0;
+        max-width: none;
+    }
+}
