@@ -17,18 +17,18 @@ body {
 
 /* Layout Principal (Formulário e Proposta) */
 .main-layout {
-    display: flex; /* ESSENCIAL PARA O LAYOUT DE BARRA LATERAL */
+    display: flex;
     max-width: 1400px;
     margin: 0 auto;
 }
 
 /* Barra Lateral de Edição (Formulário) */
 .sidebar {
-    width: 300px; 
+    width: 300px;
     background: #fff;
     padding: var(--padding-padrao);
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-    position: sticky; 
+    position: sticky; /* Mantém o formulário visível ao rolar */
     top: 0;
     height: 100vh;
     overflow-y: auto;
@@ -49,7 +49,7 @@ body {
 }
 
 .sidebar input {
-    width: calc(100% - 16px); /* Ajustado para melhor visualização */
+    width: calc(100% - 10px);
     padding: 8px;
     margin-bottom: 15px;
     border: 1px solid var(--cor-borda);
@@ -79,7 +79,7 @@ body {
     background: #fff;
     padding: 40px 60px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    min-height: 100vh; 
+    min-height: 100vh; /* Para garantir que o layout funcione bem */
 }
 
 /* Capa e Títulos */
@@ -134,7 +134,7 @@ body {
 }
 
 .destaque-migracao {
-    background-color: #f0f8ff; 
+    background-color: #f0f8ff; /* Azul claro para destaque */
     border-left: 5px solid var(--cor-principal);
     padding: 15px;
     margin: 20px 0;
@@ -152,7 +152,7 @@ body {
 }
 
 .lista-servicos li::before {
-    content: "•"; 
+    content: "•"; /* Ponto de lista personalizado */
     color: var(--cor-principal);
     font-weight: bold;
     display: inline-block; 
@@ -240,10 +240,10 @@ body {
 /* Estilos de Impressão (Oculta o formulário e limpa a visualização) */
 @media print {
     .sidebar {
-        display: none; 
+        display: none; /* Oculta o formulário ao imprimir */
     }
     .main-layout {
-        display: block; 
+        display: block; /* Remove o layout flex */
     }
     .proposta-doc {
         max-width: 100%;
