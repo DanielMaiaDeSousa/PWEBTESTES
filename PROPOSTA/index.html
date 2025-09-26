@@ -4,137 +4,154 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proposta Comercial - Serviço de Migração</title>
-    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="estilo-v2.css"> 
 </head>
 <body>
 
-    <div id="form-edicao">
-        <h2>Editar Dados da Proposta</h2>
-        <form>
-            <label for="cliente">Empresa Cliente:</label>
-            <input type="text" id="cliente" value="CENTRO ELÉTRICO">
-
-            <label for="data-proposta">Data da Proposta (Local):</label>
-            <input type="text" id="data-proposta" value="Teresina/PI, 26 de setembro de 2025">
-            
-            <label for="autor">Autor da Proposta:</label>
-            <input type="text" id="autor" value="Vinício Rosal Junior">
-            
-            <label for="cargo-autor">Cargo do Autor:</label>
-            <input type="text" id="cargo-autor" value="Diretor Comercial">
-            
-            <label for="valor-total">Valor Total (R$):</label>
-            <input type="text" id="valor-total" value="12.600,00">
-            
-            <label for="horas">Horas de Serviço (DBA):</label>
-            <input type="number" id="horas" value="36">
-
-            <label for="validade">Validade da Proposta:</label>
-            <input type="date" id="validade" value="2025-09-30">
-            
-            <button type="button" onclick="atualizarProposta()">Atualizar Proposta</button>
-            <p>*(A função 'atualizarProposta' deve ser criada com JavaScript para que os campos funcionem.)</p>
-        </form>
-        <hr>
-    </div>
-
-    <div class="proposta-container">
+    <div class="main-layout">
         
-        <header class="capa">
-            <img src="logo-readyti.png" alt="Logo ReadyTI">
-            <h1>Proposta Comercial – Serviços de Migração de Banco de Dados</h1>
-            <p class="data-local" id="proposta-data-local">Teresina/PI, 26 de setembro de 2025</p>
-        </header>
+        <aside id="form-edicao" class="sidebar">
+            <h3>Editar Proposta</h3>
+            <form>
+                <label for="cliente">Empresa Cliente:</label>
+                <input type="text" id="cliente" value="CENTRO ELÉTRICO">
 
-        <section class="secao">
-            <h2>Prezado Senhor,</h2>
-            <p>Conforme nossa análise e levantamento técnico, apresentamos nossa Proposta Técnica e Comercial referente aos serviços de migração de dois bancos de dados Oracle da empresa **<span id="cliente-span">CENTRO ELÉTRICO</span>**.</p>
-            <p>O processo de migração será de um ambiente com **Oracle Database 11g** para um com a versão **19c**. A migração utilizará a estratégia de **Export/Import (Dump)** para eliminar problemas de metadados entre as versões.</p>
-            <p>A janela de migração estimada é de **36 horas** para ambos os bancos de dados.</p>
-        </section>
-        
-        <hr>
-
-        <section class="secao">
-            <h2>OBJETIVO DA PROPOSTA</h2>
-            <p>O objetivo desta proposta é fornecer os serviços de migração de dois bancos de dados Oracle, conforme as necessidades da empresa CELET, incluindo:</p>
-            <ul>
-                <li>Migração de ambiente **Oracle Database 11g para 19c**.</li>
-                <li>Atualização da política de backup, recomendando um volume de **1.5TB** com retenção de no mínimo **7 dias**.</li>
-                <li>Migração do ambiente **on-premises**, com a recomendação de virtualização e a necessidade de um ambiente de testes.</li>
-                <li>*Observação: O documento original também menciona "Migração de ambiente PostgreSQL Database v9.5 para v.15." Caso não se aplique, remova este item.*</li>
-            </ul>
-        </section>
-
-        <hr>
-
-        <section class="secao">
-            <h2>PROPOSTA FINANCEIRA</h2>
-            <h3>2.1 Serviço de Migração de Banco de Dados</h3>
-            
-            <div class="bloco-financeiro">
-                <h4>Valor Total da Proposta:</h4>
-                <p class="valor">R$ <span id="valor-total-span">12.600,00</span></p>
-                <p>Valor para serviços de profissional DBA em **<span id="horas-span">36</span>** horas.</p>
-            </div>
-
-            <div class="bloco-financeiro">
-                <h4>Condições de Pagamento:</h4>
-                <p>Pagamento na próxima fatura.</p>
-            </div>
-            
-            <div class="bloco-financeiro">
-                <h4>Validade da Proposta:</h4>
-                <p>Esta proposta é válida até o dia **<span id="validade-span">31/09/2025</span>**.</p>
-            </div>
-        </section>
-
-        <hr>
-
-        <section class="secao">
-            <h2>TERMO DE ACEITE</h2>
-            <p>Com a aceitação da presente proposta, bem como das condições gerais para fornecimento do serviço(s) e/ou da solução contratada(s), a ReadyTI iniciará os procedimentos de execução da migração proposta.</p>
-
-            <div class="assinaturas">
-                <div class="assinatura-lado">
-                    <p>Atenciosamente,</p>
-                    <p class="linha-assinatura">_________________________________________</p>
-                    <p class="nome-assinatura" id="autor-span">Vinício Rosal Junior</p>
-                    <p class="cargo-assinatura" id="cargo-span">Diretor Comercial</p>
-                </div>
+                <label for="data-local">Data (Local):</label>
+                <input type="text" id="data-local" value="Teresina/PI, 26 de setembro de 2025">
                 
-                <div class="assinatura-lado">
-                    <p>Aceito:</p>
-                    <p class="linha-assinatura">_________________________________________</p>
-                    <p>Assinatura Cliente</p>
-                    <p class="data-aceite">**<span id="cliente-aceite-span">CENTRO ELÉTRICO</span>** - Teresina, ___ de_____________ de 2025</p>
-                </div>
-            </div>
-        </section>
+                <label for="autor">Autor:</label>
+                <input type="text" id="autor" value="Vinício Rosal Junior">
+                
+                <label for="cargo-autor">Cargo:</label>
+                <input type="text" id="cargo-autor" value="Diretor Comercial">
+                
+                <label for="valor-total">Valor Total (R$):</label>
+                <input type="text" id="valor-total" value="12.600,00">
+                
+                <label for="horas">Horas (DBA):</label>
+                <input type="number" id="horas" value="36">
 
+                <label for="validade">Válida até:</label>
+                <input type="date" id="validade" value="2025-09-30">
+                
+                <button type="button" onclick="atualizarProposta()">Atualizar Proposta</button>
+                <small>*A funcionalidade de preencher a proposta é feita com JavaScript.</small>
+            </form>
+        </aside>
+
+        <div class="proposta-doc">
+            
+            <header class="capa-header">
+                <div class="logo-box">
+                    <img src="logo-readyti.png" alt="Logo ReadyTI"> 
+                </div>
+                <h1 class="titulo-principal">Proposta Comercial – Serviços de Migração de Banco de Dados</h1>
+                <p class="subtitulo">Proposta Técnica e Preços</p>
+            </header>
+
+            <section class="info-geral">
+                <p class="info-data" id="proposta-data-local">Teresina/PI, 26 de setembro de 2025</p>
+                <p class="info-destinatario">**Para:** <span id="cliente-span">CENTRO ELÉTRICO</span></p>
+            </section>
+
+            <section class="secao">
+                <h2 class="titulo-secao">1. INTRODUÇÃO</h2>
+                <p>Prezado Senhor,</p>
+                <p>Conforme nossa análise e levantamento técnico, apresentamos nossa Proposta Técnica e Comercial referente aos serviços de migração de dois bancos de dados Oracle da empresa CELET.</p>
+                
+                <div class="destaque-migracao">
+                    <p>O processo de migração será de um ambiente com **Oracle Database 11g** para um com a versão **19c**.</p>
+                    <p>A migração utilizará a estratégia de **Export/Import (Dump)** para eliminar problemas de metadados entre as versões.</p>
+                    <p>A janela de migração estimada é de **<span id="horas-span-intro">36</span> horas** para ambos os bancos de dados.</p>
+                </div>
+            </section>
+
+            <section class="secao">
+                <h2 class="titulo-secao">2. OBJETIVO DA PROPOSTA</h2>
+                <p>O objetivo desta proposta é fornecer os serviços de migração de dois bancos de dados Oracle, conforme as necessidades da empresa CELET, incluindo:</p>
+                <ul class="lista-servicos">
+                    <li>Migração de ambiente **Oracle Database 11g para 19c**.</li>
+                    <li>Atualização da política de backup, recomendando um volume de **1.5TB** com retenção de no mínimo **7 dias**.</li>
+                    <li>Migração do ambiente **on-premises**, com a recomendação de virtualização e a necessidade de um ambiente de testes.</li>
+                    <li>Migração de ambiente **PostgreSQL Database v9.5 para v.15**.</li>
+                </ul>
+            </section>
+
+            <section class="secao">
+                <h2 class="titulo-secao">3. PROPOSTA FINANCEIRA</h2>
+                <div class="tabela-financeira">
+                    <h3>3.1 Detalhamento do Serviço</h3>
+                    <div class="item-financeiro">
+                        <p class="descricao">Serviços de profissional DBA (Migração de Banco de Dados)</p>
+                        <p class="valor-item">36 Horas</p>
+                    </div>
+                    <div class="linha-total">
+                        <p class="descricao">Valor Total da Proposta:</p>
+                        <p class="valor-final">R$ <span id="valor-total-span">12.600,00</span></p>
+                    </div>
+                </div>
+
+                <div class="condicoes">
+                    <div class="bloco-condicao">
+                        <h4>Condições de Pagamento:</h4>
+                        <p>Pagamento na próxima fatura.</p>
+                    </div>
+                    <div class="bloco-condicao">
+                        <h4>Validade da Proposta:</h4>
+                        <p>Esta proposta é válida até o dia **<span id="validade-span">31/09/2025</span>**.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="secao termo-aceite">
+                <h2 class="titulo-secao">4. TERMO DE ACEITE</h2>
+                <p>Com a aceitação da presente proposta, bem como das condições gerais para fornecimento do serviço(s) e/ou da solução contratada(s), a ReadyTI iniciará os procedimentos de execução da migração proposta.</p>
+
+                <div class="assinaturas-area">
+                    <div class="assinatura-bloco proposta-assinatura">
+                        <p>Atenciosamente,</p>
+                        <p class="linha-assinatura-proposta">Assinatura</p>
+                        <p class="nome-assinatura" id="autor-span">Vinício Rosal Junior</p>
+                        <p class="cargo-assinatura" id="cargo-span">Diretor Comercial</p>
+                    </div>
+                    
+                    <div class="assinatura-bloco aceite-cliente">
+                        <p>Aceito:</p>
+                        <p class="linha-assinatura-aceite">Assinatura Cliente</p>
+                        <p class="nome-assinatura" id="cliente-aceite-span">CENTRO ELÉTRICO</p>
+                        <p class="data-aceite">Teresina, ___ de_____________ de 2025</p>
+                    </div>
+                </div>
+            </section>
+
+        </div>
     </div>
 
     <script>
-        // Exemplo básico de JavaScript para conectar o formulário à proposta
         function atualizarProposta() {
+            // Atualiza dados do cliente e local/data
             document.getElementById('cliente-span').textContent = document.getElementById('cliente').value;
             document.getElementById('cliente-aceite-span').textContent = document.getElementById('cliente').value;
-            document.getElementById('proposta-data-local').textContent = document.getElementById('data-proposta').value;
+            document.getElementById('proposta-data-local').textContent = document.getElementById('data-local').value;
+
+            // Atualiza dados do autor
             document.getElementById('autor-span').textContent = document.getElementById('autor').value;
             document.getElementById('cargo-span').textContent = document.getElementById('cargo-autor').value;
-            document.getElementById('valor-total-span').textContent = document.getElementById('valor-total').value;
-            document.getElementById('horas-span').textContent = document.getElementById('horas').value;
 
-            // Formatação da data de validade (exemplo simples)
+            // Atualiza dados financeiros e de prazo
+            document.getElementById('valor-total-span').textContent = document.getElementById('valor-total').value;
+            document.getElementById('horas-span-intro').textContent = document.getElementById('horas').value;
+            
+            // Formatação da data de validade (exemplo simples: YYYY-MM-DD para DD/MM/YYYY)
             const validadeInput = document.getElementById('validade').value;
             if (validadeInput) {
                 const [ano, mes, dia] = validadeInput.split('-');
                 document.getElementById('validade-span').textContent = `${dia}/${mes}/${ano}`;
             }
 
-            alert('Proposta atualizada! Os dados abaixo foram alterados.');
+            alert('Proposta atualizada! Role para baixo para visualizar.');
         }
-        // Chamada inicial para garantir que os valores iniciais do formulário estejam na proposta
+        // Chamada inicial para preencher a proposta com os valores padrão do formulário
         document.addEventListener('DOMContentLoaded', atualizarProposta);
     </script>
 </body>
