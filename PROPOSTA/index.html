@@ -92,3 +92,65 @@
                 </div>
 
                 <div class="condicoes">
+                    <div class="bloco-condicao">
+                        <h4>Condições de Pagamento:</h4>
+                        <p>Pagamento na próxima fatura.</p>
+                    </div>
+                    <div class="bloco-condicao">
+                        <h4>Validade da Proposta:</h4>
+                        <p>Esta proposta é válida até o dia **<span id="validade-span">31/09/2025</span>**.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="secao termo-aceite">
+                <h2 class="titulo-secao">4. TERMO DE ACEITE</h2>
+                <p>Com a aceitação da presente proposta, bem como das condições gerais para fornecimento do serviço(s) e/ou da solução contratada(s), a ReadyTI iniciará os procedimentos de execução da migração proposta.</p>
+
+                <div class="assinaturas-area">
+                    <div class="assinatura-bloco proposta-assinatura">
+                        <p>Atenciosamente,</p>
+                        <p class="linha-assinatura-proposta">Assinatura</p>
+                        <p class="nome-assinatura" id="autor-span">Vinício Rosal Junior</p>
+                        <p class="cargo-assinatura" id="cargo-span">Diretor Comercial</p>
+                    </div>
+                    
+                    <div class="assinatura-bloco aceite-cliente">
+                        <p>Aceito:</p>
+                        <p class="linha-assinatura-aceite">Assinatura Cliente</p>
+                        <p class="nome-assinatura" id="cliente-aceite-span">CENTRO ELÉTRICO</p>
+                        <p class="data-aceite">Teresina, ___ de_____________ de 2025</p>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <script>
+        function atualizarProposta() {
+            // Atualiza dados do cliente e local/data
+            document.getElementById('cliente-span').textContent = document.getElementById('cliente').value;
+            document.getElementById('cliente-aceite-span').textContent = document.getElementById('cliente').value;
+            document.getElementById('proposta-data-local').textContent = document.getElementById('data-local').value;
+
+            // Atualiza dados do autor
+            document.getElementById('autor-span').textContent = document.getElementById('autor').value;
+            document.getElementById('cargo-span').textContent = document.getElementById('cargo-autor').value;
+
+            // Atualiza dados financeiros e de prazo
+            document.getElementById('valor-total-span').textContent = document.getElementById('valor-total').value;
+            document.getElementById('horas-span-intro').textContent = document.getElementById('horas').value;
+            
+            // Formatação da data de validade (exemplo simples: YYYY-MM-DD para DD/MM/YYYY)
+            const validadeInput = document.getElementById('validade').value;
+            if (validadeInput) {
+                const [ano, mes, dia] = validadeInput.split('-');
+                document.getElementById('validade-span').textContent = `${dia}/${mes}/${ano}`;
+            }
+        }
+        // Chamada inicial para preencher a proposta com os valores padrão do formulário
+        document.addEventListener('DOMContentLoaded', atualizarProposta);
+    </script>
+</body>
+</html>
